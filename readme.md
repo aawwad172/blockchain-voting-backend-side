@@ -1,6 +1,6 @@
 Here’s a `README.md` file for your backend project:
 
-````markdown
+
 # Backend
 
 ## Overview
@@ -23,7 +23,7 @@ Navigate to the backend directory and install the necessary dependencies:
 cd backend
 npm install
 ```
-````
+
 
 ### 2. Create a `.env` File
 
@@ -69,13 +69,6 @@ To start the server in development mode with live reloading:
 node start
 ```
 
-## Testing
-
-To run tests:
-
-```sh
-npm test
-```
 
 ## Dependencies
 
