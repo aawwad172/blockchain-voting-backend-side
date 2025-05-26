@@ -1,5 +1,5 @@
-const mysql = require("mysql2/promise");
-const dotenv = require("dotenv");
+import mysql from "mysql2/promise";
+import dotenv from "dotenv";
 
 dotenv.config();
 
@@ -13,7 +13,7 @@ const dbConfig = {
 
 let pool;
 
-async function initialize() {
+export async function initialize() {
 	try {
 		pool = await mysql.createPool(dbConfig);
 		console.log("Database connection pool created");
@@ -22,7 +22,7 @@ async function initialize() {
 	}
 }
 
-async function close() {
+export async function close() {
 	try {
 		if (pool) {
 			await pool.end();
@@ -33,7 +33,7 @@ async function close() {
 	}
 }
 
-async function execute(query, params) {
+export async function execute(query, params) {
 	try {
 		const [results] = await pool.execute(query, params);
 		return results;
@@ -42,9 +42,3 @@ async function execute(query, params) {
 		throw err;
 	}
 }
-
-module.exports = {
-	initialize,
-	close,
-	execute,
-};

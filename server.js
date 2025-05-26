@@ -1,8 +1,8 @@
-const express = require("express");
-const authRoutes = require("./routes/auth");
-const db = require("./config/db");
-const dotenv = require("dotenv");
-const cors = require("cors");
+import express from "express";
+import authRoutes from "./routes/auth.js";
+import * as db from "./config/db.js";
+import dotenv from "dotenv";
+import cors from "cors";
 
 dotenv.config();
 
